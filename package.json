@@ -1,0 +1,53 @@
+{
+  "name": "botjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-js/Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-js/Bot/issues"
+  },
+  "homepage": "https://github.com/Z7ev/ComuBot#readme",
+  "dependencies": {
+    "betalogger": "^1.6.1",
+    "canvas": "^2.4.1",
+    "cpu-stat": "^2.0.1",
+    "dateformat": "^3.0.3",
+    "discord.js": "^11.5.1",
+    "discord.js-lavalink": "^2.2.2",
+    "dotenv": "^7.0.0",
+    "enmap": "^4.8.7",
+    "figlet": "^1.2.1",
+    "fs": "0.0.1-security",
+    "git": "^0.1.5",
+    "glob": "^7.1.4",
+    "http": "0.0.0",
+    "jimp": "^0.6.4",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "mongoose": "^5.5.8",
+    "node-superfetch": "^0.1.9",
+    "now": "^15.2.0",
+    "path": "^0.12.7",
+    "random-int": "^2.0.0",
+    "request": "^2.88.0",
+    "simple-youtube-api": "^5.1.1",
+    "superagent": "^5.0.5",
+    "url": "^0.11.0",
+    "util": "^0.12.0"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "v10.11.0",
+    "now": "12.0.1"
+  }
+}

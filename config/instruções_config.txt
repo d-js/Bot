@@ -1,0 +1,73 @@
+/*
+DB - { EXPLICAÇÕES SOBRE MONGO}:
+
+[Mongoose]: Bom mongoose é uma livraria do Node.js. Com ela podemos criar uma solução
+baseada em esquemas para modelar os dados da aplicação (no caso o bot).
+
+[Schema]: São os esquemas que o bot vai enviar para a mongo.
+
+[Connect]: Com ele vamos nos conectar com o banco de dados.
+
+[Model]: Exemplos dos documentos que são criados no bot.
+
+JS - { COISAS BÁSICAS SOBRE JAVASCRIPT }
+
+Sabendo estas coias básicas você poderá impletar elas no banco de dados.
+[String]: Strins são usadas para armazenar e manipular texto.
+    ↳ Exemplos:
+        let msg = 'Oi meu nome é Zev';
+        console.log(msg)
+        
+[Number]: Os números podem ser escritos com (inteiros) ou sem decimais.
+    ↳ Exemplos:
+        let numi = 1;
+        let numd = 1.2;
+        console.log(numi)
+        console.log(numd)
+[Array]: São usadas para armazenar vários valores em uma única variável.
+    ↳ Exemplos:
+        let nomes = ['Zev', 'Nikolai', 'Foxy'];
+        console.log(nomes)
+[Map]: O map cria uma nova matriz com todos os elementos em um array para outro conjunto de valores.
+    ↳ Exemplos:
+        let nums = [2, 4, 6];
+        let mip = nums.map(function(num) {
+            return num;
+        });
+        console.log(mip)
+/*
+        const { connect, Schema, model } = require('mongoose') // Invocamos a mongoose com suas respectivas funções.
+const settings = require('./settings.js') // Dados importantes: MONGO_URL
+
+connect(settings.MONGO_URI, { // Aqui está o link do banco de dados que no caso seria a conexão do bot com o site da mongo.
+    useNewUrlParser: true
+}, (err) => {
+    if(err) return console.log(`ERROR => Houve um erro ao conectar ao banco de dados.\n${err}`) // Caso houver erro seja por causa do link ou algo do tipo o bot enviará no console um relatório sobre o erro envolvido.
+    console.log('SUCESS => Fui connectado com o banco de dados.') // Se tudo funcionar corretamenete o bot vai enviar uma mensagem no console.
+});
+        
+let User = new Schema({ // Esquema "User". Cada usuário terá um esquema separado.
+    _id: { // Registra o ID do usuário.
+        type: String // Texto
+    }, 
+    coins: { // Coins que o usuário possui.
+        type: Number, // Número
+        default: 0 // Padrão de coins que a pessoa terá queando for registrada pelo bot.
+    },
+    timedaily: { // Tempo definido para coletar os coins diários.
+        type: String, // Texto
+        default: '0000000000000' // Tempo
+    }
+});
+    
+let Guild = new Schema({ // Esquema "Guild". Cada servidor terá seu esquema separado.
+    serverID: { // Registra o ID da guilda
+        type: String // Texto
+    }
+});
+
+// Aqui aconteçe a exportação dos esquemas que forão criados. Eles serão enviados para o "collect" lá no site da Mongo
+
+exports.Users = model('Users', User);
+exports.Guilds = model('Guilds', Guild);
+/*
